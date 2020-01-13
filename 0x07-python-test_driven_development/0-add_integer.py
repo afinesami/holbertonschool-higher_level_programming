@@ -5,13 +5,9 @@ add_integer module
 
 
 def add_integer(a, b):
-
     """
-    Return the sum of a and b.
-    a -- first integer
-    b -- second integer
+    Return sum of a and b.
     """
-
     if type(a) == float:
         a = int(a)
     if type(b) == float:
@@ -22,4 +18,4 @@ def add_integer(a, b):
     if not isinstance(b, int) or isinstance(b, bool):
         raise TypeError("b must be an integer")
 
-    return (a + b)
+    return ( a + b )
