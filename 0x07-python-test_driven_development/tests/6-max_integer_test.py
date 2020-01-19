@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
+"""
+Unittest for max_integer([..])
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
-class Tests(unittest.TestCase):
+class MaxIntegerTest(unittest.TestCase):
     """Presence of docstrings"""
+
     def test_presence_of_module_docstring(self):
         test = __import__('6-max_integer').__doc__
         self.assertTrue(len(test) > 1)
@@ -80,6 +82,7 @@ class Tests(unittest.TestCase):
         test = [666, [1337], 99]
         with self.assertRaises(TypeError):
             max_integer(test)
+
 
 if __name__ == "__main__":
     unittest.main()
