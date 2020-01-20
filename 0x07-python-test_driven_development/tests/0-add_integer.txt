@@ -1,55 +1,66 @@
-Importing the function from the module:
->>> add_integer = __import__("0-add_integer").add_integer
+The ``0-add_integer`` module
+============================
 
-Check: module docstring:
-    >>> m = __import__("0-add_integer").__doc__
-    >>> len(m) > 1
-    True
+Using ``add_integer``
+---------------------
 
-Check: function docstring:
-    >>> f = __import__("0-add_integer").add_integer.__doc__
-    >>> len(f) > 1
-    True
+This is an example text file in reStructuredText format. First import
+``add_integer`` from the ``0-add_integer`` module:
 
-Check: regular addition:
-    >>> add_integer(5, 3)
-    8
+>>> add_integer = __import__('0-add_integer').add_integer
 
-Check: positive with negative:
-    >>> add_integer(2, -3)
-    -1
+Now use it:
 
-Check: negative with positive:
-    >>> add_integer(-6, 2)
-    -4
+>>> add_integer(2, 3)
+5
 
+>>> add_integer(100.3, -2)
+98
 
-Check: float with int:
-    >>> add_integer(4.1, 3)
-    7
+>>> add_integer(-True, False)
+-1
 
-Check: int with float:
-    >>> add_integer(12, 7.7)
-    19
+>>> add_integer(-True, -False)
+-1
 
-Check: both float:
-    >>> add_integer(5.25, 3.3)
-    8
+>>> add_integer(True, False)
+1
 
-Check: passed None:
-    >>> add_integer(10, None)
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
+>>> add_integer(True, -False)
+1
 
-check: must be integer:
-    >>> add_integer("adc", 10)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
+>>> add_integer(100.3, 100.3)
+200
 
-check: floar OverFlow:
-    >>> add_integer(float('inf'),8)
-    Traceback (most recent call last):
-    ...
-    OverflowError: cannot convert float infinity to integer
+>>> add_integer("school", 100.3)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer("Holberton", "School")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(None, "School")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(5.25, 3.3)
+8
+
+>>> add_integer(10, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer("adc", 10)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(float('inf'),8)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
