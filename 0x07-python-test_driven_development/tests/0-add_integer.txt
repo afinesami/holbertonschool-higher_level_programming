@@ -17,19 +17,19 @@ Now use it:
 >>> add_integer(100.3, -2)
 98
 
->>> add_integer(-True, -False)
--1
+>>> add_integer(-6, 2)
+-4
 
->>> add_integer(True, False)
-1
+>>> add_integer(3.1, 3)
+6
 
->>> add_integer(-True, False)
--1
+>>> add_integer(10, 7.7)
+17
 
->>> add_integer(True, -False)
-1
+>>> add_integer(2.25, 3.3)
+5
 
->>> add_integer("school", 100.3)
+>>> add_integer("school", 50.3)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
@@ -44,5 +44,5 @@ Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
->>> add_integer(100.3, 100.3)
-200
+>>> add_integer(50.3, 50.3)
+100
