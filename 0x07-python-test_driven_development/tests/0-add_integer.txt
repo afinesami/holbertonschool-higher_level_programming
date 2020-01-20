@@ -41,3 +41,15 @@ Check: passed None:
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
+
+check: must be integer:
+    >>> add_integer("adc", 10)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+check: floar OverFlow:
+    >>> add_integer(float('inf'),8)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
