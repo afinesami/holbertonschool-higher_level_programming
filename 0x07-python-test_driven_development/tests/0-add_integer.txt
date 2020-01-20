@@ -1,46 +1,43 @@
-The ``0-add_integer(a, b)`` module
-======================
+Importing the function from the module:
+>>> add_integer = __import__("0-add_integer").add_integer
 
-Using ``addition with 2 integers``
--------------------
+Check: module docstring:
+    >>> m = __import__("0-add_integer").__doc__
+    >>> len(m) > 1
+    True
 
-This is an example text file in reStructuredText format.  First import
-``add_integer`` from the ``0-add_integer`` module:
+Check: function docstring:
+    >>> f = __import__("0-add_integer").add_integer.__doc__
+    >>> len(f) > 1
+    True
 
-    >>> add_integer = __import__('0-add_integer').add_integer
+Check: regular addition:
+    >>> add_integer(5, 3)
+    8
 
-Now use it:
+Check: positive with negative:
+    >>> add_integer(2, -3)
+    -1
 
->>> add_integer(1, 3)
-4
+Check: negative with positive:
+    >>> add_integer(-6, 2)
+    -4
 
->>> add_integer(100.3, -2)
-98
 
->>> add_integer(-8, 2)
--6
+Check: float with int:
+    >>> add_integer(4.1, 3)
+    7
 
->>> add_integer(5.1, 3)
-8
+Check: int with float:
+    >>> add_integer(12, 7.7)
+    19
 
->>> add_integer(20, 7.7)
-27
+Check: both float:
+    >>> add_integer(5.25, 3.3)
+    8
 
->>> add_integer(2.85, 9.3)
-11
-
->>> add_integer("school", 50.3)
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
->>> add_integer(None, "School")
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
->>> add_integer("Holberton", "School")
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
+Check: passed None:
+    >>> add_integer(10, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
