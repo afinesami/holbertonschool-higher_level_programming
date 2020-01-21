@@ -1,0 +1,85 @@
+0x0A-python-inheritance/1-my_list.txt module
+====================
+
+Importing the class from the module:
+    >>> MyList = __import__("1-my_list").MyList
+
+Checking for module docstring:
+    >>> m = __import__("1-my_list").__doc__
+    >>> len(m) > 1
+    True
+
+check: method docstring:
+    >>> meth = __import__("1-my_list").MyList.print_sorted.__doc__
+    >>> len(meth) > 1
+    True
+
+Checking for class docstring:
+    >>> c = __import__("1-my_list").MyList.__doc__
+    >>> len(c) > 1
+    True
+
+check: empty list:
+    >>> l = MyList()
+    >>> l.print_sorted()
+    []
+
+check: polindrome list:
+    >>> l = MyList()
+    >>> l.append(4)
+    >>> l.append(3)
+    >>> l.append(2)
+    >>> l.append(3)
+    >>> l.append(4)
+    >>> l.print_sorted()
+    [2, 3, 3, 4, 4]
+
+check: all negative numbers:
+    >>> l = MyList()
+    >>> l.append(-1)
+    >>> l.append(-2)
+    >>> l.append(-3)
+    >>> l.append(-4)
+    >>> l.append(0)
+    >>> print(l)
+    [-1, -2, -3, -4, 0]
+    >>> l.print_sorted()
+    [-4, -3, -2, -1, 0]
+    >>> print(l)
+    [-1, -2, -3, -4, 0]
+
+check: one negative number:
+    >>> l = MyList()
+    >>> l.append(-1)
+    >>> l.append(5)
+    >>> print(l)
+    [-1, 2]
+    >>> l.print_sorted()
+    [-1, 2]
+    >>> print(l)
+    [-1, 2]
+
+Checking None object
+    >>> obj5 = MyList()
+
+    >>> obj5.append(None)
+
+    >>> print(obj5)
+    [None]
+
+    >>> obj5.print_sorted()
+    [None]
+
+Checking NaN object
+    >>> obj4 = MyList()
+
+    >>> obj4.append(NaN)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'NaN' is not defined
+
+    >>> print(obj4)
+    []
+
+    >>> obj4.print_sorted()
+    []
