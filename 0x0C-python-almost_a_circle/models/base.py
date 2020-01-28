@@ -49,27 +49,3 @@ class Base:
         else:
             ret_list = list_dictionaries
         return json.dumps(ret_list)
-
-    @classmethod
-    def create(cls, **dictionary):
-        '''class method that prints instances'''
-        if cls.__name__ == 'Rectangle':
-            dummy = cls(1, 1)
-        elif cls.__name__ == 'Square':
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
-
-    @classmethod
-    def load_from_file(cls):
-        '''Class Method that returns a list of instances'''
-        new_list = []
-        try:
-            with open("{}.json".format(cls.__name__), 'r') as f:
-                new = cls.from_json_string(f.read())
-        except IOError:
-            return []
-
-        for i in new:
-            new_list.append(cls.create(**i))
-        return new_list
