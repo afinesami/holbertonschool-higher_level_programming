@@ -19,7 +19,6 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-
     @classmethod
     def save_to_file(cls, list_objs):
         '''method: save_to_file
