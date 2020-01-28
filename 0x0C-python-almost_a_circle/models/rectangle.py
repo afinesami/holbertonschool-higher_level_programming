@@ -34,3 +34,22 @@ class Rectangle(Base):
         if len(args) == 0:
             for key, val in kwargs.items():
                 self.__dict__[KV_dict[key]] = val
+
+    def __str__(self):
+        '''method __str__
+        '''
+
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                self.__y, self.__width, self.__height))
+
+    def area(self):
+        '''public_method area of rectangle
+        '''
+        return self.__width * self.__height
+
+    def display(self):
+        '''public method display self prints in stdout #
+        '''
+        print("\n" * (self.__y), end="")
+        for i in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
