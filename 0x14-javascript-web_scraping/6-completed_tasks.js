@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// script that computes the number of tasks completed by user id.
 
 const args = process.argv;
 let reqURL = args[2];
