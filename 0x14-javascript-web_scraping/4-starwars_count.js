@@ -11,7 +11,7 @@ request(url, function (error, response, body) {
     let cont_characters = 0;
     for (let cont = 0; cont < list.length; cont++) {
       for (let cont1 = 0; cont1 < list[cont1].characters.length; cont1++) {
-        if (list[cont1].characters.includes('https://swapi.co/api/people/18/')) {
+        if (list[cont1].characters.includes('https://swapi-api.hbtn.io/api/films/')) {
           cont_characters++;
         }
       }
